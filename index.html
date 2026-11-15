@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIWIX project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Доска планирования</h1>
+        <div class="board">
+            <div class="section" id="to-do">
+                <h3>To Do</h3>
+                <div class="task" id="task-todo"></div>
+                <input type="text" class="task-input" placeholder="Напишите задачу">
+                <button class="add-task" id="add-todo-btn">Добавить</button>
+            </div>
+            <div class="section" id="in-progress">
+                <h3>In Progress</h3>
+                <div class="task" id="task-in-progress"></div>
+                <input type="text" class="task-input" placeholder="Напишите задачу">
+                <button class="add-task" id="add-in-progress-btn">Добавить</button>
+            </div>
+            <div class="section" id="review">
+                <h3>Review</h3>
+                <div class="task" id="task-review"></div>
+                <input type="text" class="task-input" placeholder="Напишите задачу">
+                <button class="add-task" id="add-review-btn">Добавить</button>
+            </div>
+            <div class="section" id="done">
+                <h3>Done</h3>
+                <div class="task" id="task-done"></div>
+                <input type="text" class="task-input" placeholder="Напишите задачу">
+                <button class="add-task" id="add-done-btn">Добавить</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/script.js"></script>
+</body>
+</html>
