@@ -44,14 +44,64 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 8px; 
-    min-height: 20px; 
+    min-height: 80px;
+    margin-bottom: 15px;
+    background-color: #0000000b;
+    border-radius: 9px;
 }
 
-.task-item { 
+.task-item {
     background-color: white; 
     padding: 10px; 
     border-radius: 6px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: grab;
+}
+
+.task-item:hover {
+    background-color: rgb(235, 252, 255); 
+    box-shadow: 0 2px 2px rgba(10, 161, 255, 0.563);
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.task-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-top: 10px;
+}
+
+.edit-button {
+    padding: 5px;
+    background-color: #4f86c9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    transform: translateY(-1px);
+    background-color: #4f86c9cb;
+    transition: background-color 0.2s, transform 0.5s;
+}
+
+.delete-button {
+    padding: 5px;
+    background-color: #c94f4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.delete-button:hover {
+    transform: translateY(-1px);
+    background-color: #c94f4fbd;
+    transition: background-color 0.2s, transform 0.5s;
 }
 
 .task-input {
@@ -67,6 +117,15 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: inherit;
     font-weight: 600;
+}
+
+.add-task:hover {
+    transform: translateY(-1px);
+    background-color: #064b9f;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.is-dragging {
+    border: 2px dashed;
 }
