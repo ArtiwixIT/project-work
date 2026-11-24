@@ -36,21 +36,26 @@ function addTask(value) {
     let currentInput;
     let currentContainer;
     
-    if (value === 'todo') {
-        currentInput = inputToDo;
-        currentContainer = containerToDo;
-    } else if (value === 'in-progress') {
-        currentInput = inputInProgress;
-        currentContainer = containerInProgress;
-    } else if (value === 'review') {
-        currentInput = inputReview;
-        currentContainer = containerReview;
-    } else if (value === 'done') {
-        currentInput = inputDone;
-        currentContainer = containerDone;
-    } else {
-        alert('Что-то пошло не так');
-        return;
+    switch (value) {
+        case 'todo':
+            currentInput = inputToDo;
+            currentContainer = containerToDo;
+            break;
+        case 'in-progress':
+            currentInput = inputInProgress;
+            currentContainer = containerInProgress;
+            break;
+        case 'review':
+            currentInput = inputReview;
+            currentContainer = containerReview;
+            break;
+        case 'done':
+            currentInput = inputDone;
+            currentContainer = containerDone;
+            break;
+        default:
+            alert('Что-то пошло не так');
+            return;
     }
 
     const taskText = currentInput.value;
