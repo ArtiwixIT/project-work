@@ -6,33 +6,35 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: azure;
+    background-color: #f0ffff;
     padding: 20px;
 }
 
-h1 {
+header h1 {
     padding-top: 50px;
     padding-bottom: 30px;
     text-align: center;
 }
 
-.board {
+.board { 
     display: flex;
     gap: 20px;
     align-items: flex-start;
     justify-content: center;
 }
 
+/*  */
+
 .section {
     display: flex;
     flex-direction: column;
-    background-color: rgba(240, 240, 240, 0.447);
+    background-color: #f0f0f072;
     width: 300px;
     min-width: 200px;
     border-radius: 10px;
     padding: 15px;
     gap: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px #0000001a;
 }
 
 .section h3 {
@@ -51,16 +53,16 @@ h1 {
 }
 
 .task-item {
-    background-color: white; 
+    background-color: #ffffff; 
     padding: 10px; 
     border-radius: 6px; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px #0000001a;
     cursor: grab;
 }
 
 .task-item:hover {
-    background-color: rgb(235, 252, 255); 
-    box-shadow: 0 2px 2px rgba(10, 161, 255, 0.563);
+    background-color: #ebfcff; 
+    box-shadow: 0 2px 2px #0aa1ff90;
     transition: background-color 0.5s, box-shadow 0.5s;
 }
 
@@ -74,7 +76,7 @@ h1 {
 .edit-button {
     padding: 5px;
     background-color: #4f86c9;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -91,7 +93,7 @@ h1 {
 .delete-button {
     padding: 5px;
     background-color: #c94f4f;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -113,7 +115,7 @@ h1 {
 .add-task {
     padding: 8px;
     background-color: #4f86c9;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;

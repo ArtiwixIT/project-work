@@ -149,3 +149,7 @@ function dragAndDrop(newTask) {
         draggableTask = null;
     })
 }
+
+function saveTask() {
+    
+}
