@@ -66,18 +66,54 @@ function addTask(value) {
 
     const newTask = document.createElement('div');
     const buttons = document.createElement('div');
-
     const deleteButton = document.createElement('button');
     const editButton = document.createElement('button');
 
     newTask.classList.add('task-item');
+    buttons.classList.add('task-buttons');
+    editButton.classList.add('edit-button');
+    deleteButton.classList.add('delete-button');
+
+    newTask.textContent = taskText;
+    editButton.textContent = '✎';
+    deleteButton.textContent = '✕';
+
+    buttons.appendChild(editButton);
+    buttons.appendChild(deleteButton);
+    newTask.appendChild(buttons);
+    currentContainer.appendChild(newTask);
     
+    editTask(editButton, newTask);
+    deleteTask(deleteButton, newTask);
+    dragAndDrop(newTask);
+
+    currentInput.value = '';
+}
+
+function editTask(editButton, newTask) {
+    editButton.addEventListener('click', () => {
+        let editInput = prompt('Изменение задачи на:', newTask.firstChild.textContent);
+        if (editInput.trim() !== '' && editInput !== null) {
+            newTask.firstChild.textContent = editInput;
+        }
+    })
+}
+
+function deleteTask(deleteButton, newTask) {
+    deleteButton.addEventListener('click', () => {
+        const warning = confirm("Удалить сообщение?");
+        if (warning) {
+            newTask.remove();
+        }
+    })
+}
+
+function dragAndDrop(newTask) {
     newTask.draggable = true;
 
     newTask.addEventListener('dragstart', () => {
         draggableTask = newTask;
     });
-
 
     containerToDo.addEventListener('dragover', (event) => {
         event.preventDefault();
@@ -91,7 +127,6 @@ function addTask(value) {
     containerDone.addEventListener('dragover', (event) => {
         event.preventDefault();
     });
-
 
     containerToDo.addEventListener('drop', (event) => {
         event.preventDefault();
@@ -110,39 +145,7 @@ function addTask(value) {
         containerDone.appendChild(draggableTask);
     })
 
-
     newTask.addEventListener('dragend', () => {
         draggableTask = null;
     })
-
-    newTask.textContent = taskText;
-
-    buttons.classList.add('task-buttons');
-
-    editButton.classList.add('edit-button');
-    editButton.type = 'button';
-    editButton.textContent = '✎';
-
-    deleteButton.classList.add('delete-button');
-    deleteButton.type = 'button';
-    deleteButton.textContent = '✕';
-
-    buttons.appendChild(editButton);
-    buttons.appendChild(deleteButton);
-    newTask.appendChild(buttons);
-    currentContainer.appendChild(newTask);
-
-    
-    deleteButton.addEventListener('click', () => {
-        newTask.remove();
-    })
-
-    editButton.addEventListener('click', () => {
-        let editInput = prompt('Изменение задачи на:');
-        if (editInput.trim() !== '' && editInput !== null) {
-            newTask.firstChild.textContent = editInput;
-        }
-    })
-
-    currentInput.value = '';
 }
